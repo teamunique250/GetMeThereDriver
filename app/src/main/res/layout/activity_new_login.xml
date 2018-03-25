@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.corelabsplus.getmetheredriver.activities.LoginActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appbar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_bar_height"
+            android:background="@color/colorPrimary"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_below="@id/appbar"
+        android:stateListAnimator="@null">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/main_label"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:text="Please Enter your phone number!"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/disclaimer"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/main_label"
+            android:text="Please make sure that your carrier supports international Short Messaging Services (SMS), and note that your carrier charges for SMS may apply."/>
+        <EditText
+            android:id="@+id/code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/disclaimer"
+            android:layout_margin="5dp"
+            android:hint="1 2 3 4 5 6"
+            android:inputType="number"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:id="@+id/fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/disclaimer">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <EditText
+                    android:id="@+id/country_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center_horizontal"
+                    android:hint="+250"
+                    android:inputType="phone"
+                    android:maxLength="4"
+                    android:padding="5dp" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@+id/country_code"
+                    android:gravity="center_horizontal"
+                    android:hint="788 012 345"
+                    android:inputType="phone"
+                    android:maxLength="12"
+                    android:padding="5dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/send_code_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fields"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_arrow_forward"
+            android:tint="@color/white"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDark"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fields"
+            android:id="@+id/confirm"
+            android:src="@drawable/ic_check"
+            android:tint="@color/white"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDark"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reloader"
+            android:layout_below="@+id/fields"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_reload"
+            android:tint="@color/white"
+            android:visibility="invisible"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDark"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fields"
+            android:id="@+id/fLoadingBar"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checking your profile..."
+            android:id="@+id/fLoadinglabel"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/fLoadingBar"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
